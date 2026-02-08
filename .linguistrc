@@ -1,0 +1,11 @@
+# Configuração do GitHub Linguist
+# Força o reconhecimento correto de linguagens no repositório
+
+# Marca arquivos CSS como detectable
+*.css linguist-detectable=true
+*.scss linguist-detectable=true
+
+# Marca arquivos HTML como detectable  
+*.html linguist-detectable=true
+*.jsx linguist-detectable=true
+*.tsx linguist-detectable=true

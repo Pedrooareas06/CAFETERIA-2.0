@@ -1,152 +1,42 @@
 # Cateria 2.0 ☕
 
-Um site moderno e responsivo para cafeteria com integração de chatbot IA.
+Site moderno para cafeteria com chatbot IA integrado.
 
-## 🎯 Sobre o Projeto
+## 🚀 Tecnologias
 
-Cateria 2.0 é uma aplicação web construída com Next.js que oferece uma experiência completa para uma cafeteria online. O projeto inclui:
-
-- 🏠 Landing page atrativa com seções hero, menu e depoimentos
-- 💬 Chatbot com inteligência artificial (integração OpenAI)
-- 🛒 Sistema de carrinho de compras
-- 📱 Design totalmente responsivo
-- 🎨 Interface moderna com Tailwind CSS e componentes shadcn/ui
-- 🌙 Suporte a tema claro/escuro
-
-
-
-### Frontend
-- **Next.js 14** - Framework React
-- **TypeScript** - Tipagem estática
-- **Tailwind CSS** - Utilitários CSS
-- **shadcn/ui** - Componentes UI acessíveis
+- **Next.js** + **TypeScript** - Framework e tipagem
+- **Tailwind CSS** - Estilização responsiva  
+- **OpenAI API** - Chatbot com IA
+- **shadcn/ui** - Componentes modernos
 - **React Hook Form** - Gerenciamento de formulários
-- **Zod** - Validação de schemas
 
-### IA & Chat
-- **Vercel AI SDK** - Integração com modelos de IA
-- **OpenAI** - API de modelos de linguagem
+## 📦 Instalação
 
-### Componentes & Bibliotecas
-- **Radix UI** - Primitivos acessíveis
-- **Lucide React** - Ícones
-- **Sonner** - Sistema de toast notifications
-- **Embla Carousel** - Carrossel de imagens
-
-## 📋 Pré-requisitos
-
-- Node.js 18+ 
-- npm ou yarn
-- Chave API do OpenAI
-
-## 🚀 Como Começar
-
-### 1. Clone o repositório
 ```bash
+# Clone o repositório
 git clone <seu-repositorio>
 cd cateria-2.0
-```
 
-### 2. Instale as dependências
-```bash
+# Instale as dependências
 npm install
-```
 
-### 3. Configure as variáveis de ambiente
-
-Copie o arquivo `.env.example` para `.env.local`:
-```bash
+# Configure variáveis de ambiente
 cp .env.example .env.local
-```
+# Adicione sua OPENAI_API_KEY no .env.local
 
-Adicione sua chave API do OpenAI no arquivo `.env.local`:
-```env
-OPENAI_API_KEY=sua_chave_api_do_openai_aqui
-```
-
-### 4. Execute o servidor de desenvolvimento
-```bash
+# Inicie o servidor
 npm run dev
 ```
 
-Abra [http://localhost:3000](http://localhost:3000) no seu navegador.
+Acesse [http://localhost:3000](http://localhost:3000)
 
-## 📁 Estrutura do Projeto
-
-```
-cateria-2.0/
-├── app/                           # Next.js app directory
-│   ├── layout.tsx                # Layout principal
-│   ├── page.tsx                  # Página inicial
-│   ├── globals.css               # Estilos globais
-│   └── api/
-│       └── chat/
-│           └── routes.ts         # API do chatbot IA
-├── components/
-│   ├── shadcn/                   # Componentes shadcn/ui
-│   │   ├── button.tsx
-│   │   ├── card.tsx
-│   │   ├── dialog.tsx
-│   │   ├── sidebar.tsx
-│   │   ├── table.tsx
-│   │   └── ...
-│   └── ui/                       # Componentes customizados
-│       ├── hero-section.tsx      # Seção hero
-│       ├── menu-section.tsx      # Seção de menu
-│       ├── ai-chatbot.tsx        # Chatbot com IA
-│       ├── navigation.tsx        # Navegação
-│       ├── features-section.tsx  # Seção de features
-│       ├── testimonials.tsx      # Seção de depoimentos
-│       ├── Footer.tsx            # Rodapé
-│       └── ...
-├── hooks/
-│   ├── use-scroll-animation.ts   # Hook para animações
-│   ├── use-toast.ts              # Hook para notificações
-│   └── use-mobile.ts             # Hook para responsividade
-├── lib/
-│   ├── cart-store.ts             # Lógica do carrinho
-│   ├── products.ts               # Dados dos produtos
-│   └── utils.ts                  # Utilitários
-├── public/                        # Arquivos estáticos
-│   └── images/                   # Imagens
-├── package.json
-├── tailwind.config.ts            # Configuração Tailwind
-├── tsconfig.json                 # Configuração TypeScript
-├── next.config.mjs               # Configuração Next.js
-└── README.md
-```
-
-## 🎨 Componentes Principais
-
-### **AI Chatbot** (`ai-chatbot.tsx`)
-Chatbot inteligente que se integra com OpenAI para fornecer respostas sobre a cafeteria.
-
-### **Menu Section** (`menu-section.tsx`)
-Exibição do menu de produtos da cafeteria com paginação.
-
-### **Hero Section** (`hero-section.tsx`)
-Seção inicial atrativa com chamada para ação.
-
-### **Features Section** (`features-section.tsx`)
-Destaque das principais características da cafeteria.
-
-### **Testimonials** (`testimonials.tsx`)
-Seção de avaliações e depoimentos de clientes.
-
-## 🔧 Scripts Disponíveis
+## 🛠️ Scripts
 
 ```bash
-# Desenvolvimento
-npm run dev
-
-# Build para produção
-npm run build
-
-# Inicia servidor de produção
-npm start
-
-# Executa linter
-npm run lint
+npm run dev      # Desenvolvimento
+npm run build    # Build para produção
+npm start        # Iniciar servidor
+npm run lint     # Executar linter
 ```
 
 ## 🛒 Funcionalidades

@@ -1,11 +1,18 @@
 * text=auto
-*.js text eol=lf
-*.jsx text eol=lf
-*.ts text eol=lf
-*.tsx text eol=lf linguist-language=TypeScript
-*.css text eol=lf linguist-language=CSS
-*.html text eol=lf linguist-language=HTML
+*.js text eol=lf linguist-language=JavaScript
+*.jsx text eol=lf linguist-language=JavaScript linguist-detectable=true
+*.ts text eol=lf linguist-language=TypeScript
+*.tsx text eol=lf linguist-language=TypeScript linguist-detectable=true
+*.css text eol=lf linguist-language=CSS linguist-detectable=true
+*.scss text eol=lf linguist-language=Scss linguist-detectable=true
+*.html text eol=lf linguist-language=HTML linguist-detectable=true
 *.json text eol=lf
 *.md text eol=lf
 *.yml text eol=lf
 *.yaml text eol=lf
+# Config files
+next.config.* linguist-detectable=false
+tsconfig.json linguist-detectable=false
+tailwind.config.* linguist-detectable=false
+postcss.config.* linguist-detectable=false
+components.json linguist-detectable=false
