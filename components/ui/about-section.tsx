@@ -67,7 +67,7 @@ export function AboutSection() {
               }`}
             >
               <span className="text-balance">
-                Paixao pelo cafe, do grao a xicara.
+                Paixao pelo cafe, do gão a xícara.
               </span>
             </h2>
             <p
@@ -77,10 +77,10 @@ export function AboutSection() {
                   : "opacity-0 translate-y-6"
               }`}
             >
-              Ha mais de 10 anos, o Cafe Aroma traz a melhor experiencia em cafe
-              artesanal. Selecionamos graos especiais de produtores locais e
-              preparamos cada xicara com dedicacao. Nosso compromisso e com a
-              qualidade, sustentabilidade e a arte de fazer cafe.
+              Ha mais de 10 anos, o Café Aroma traz a melhor experiência em café
+              artesanal. Selecionamos grãos especiais de produtores locais e
+              preparamos cada xícara com dedicação. Nosso compromisso e com a
+              qualidade, sustentabilidade e a arte de fazer café.
             </p>
 
             {/* Stats */}

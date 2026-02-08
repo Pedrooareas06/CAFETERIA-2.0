@@ -10,7 +10,7 @@ const highlights = [
     icon: Star,
     name: "Cappuccino Classico",
     description:
-      "Espuma cremosa e aveludada sobre um espresso encorpado. A combinacao perfeita que conquistou o coracao dos nossos clientes. Feito com leite fresco e graos 100% arabica.",
+      "Espuma cremosa e aveludada sobre um espresso encorpado. A combinação perfeita que conquistou o coração dos nossos clientes. Feito com leite fresco e grãos 100% arabica.",
     price: "R$ 12,00",
     image: "/images/cappuccino.jpg",
     cta: "Eu quero!",
@@ -30,7 +30,7 @@ const highlights = [
     icon: Snowflake,
     name: "Cold Brew 12h",
     description:
-      "Extraido a frio por 12 horas para um sabor suave e naturalmente doce. Sem amargor, sem acidez. O cafe perfeito para os dias quentes de Sao Paulo.",
+      "Extraído a frio por 12 horas para um sabor suave e naturalmente doce. Sem amargor, sem acidez. O café perfeito para os dias quentes de Sao Paulo.",
     price: "R$ 13,00",
     image: "/images/cold-brew.jpg",
     cta: "Quero provar",

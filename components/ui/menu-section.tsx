@@ -6,7 +6,7 @@ import Image from "next/image";
 const menuItems = [
   {
     name: "Espresso",
-    description: "Puro, intenso e encorpado. A essencia do cafe.",
+    description: "Puro, intenso e encorpado. A essencia do café.",
     price: "R$ 8,00",
     image: "/images/espresso.jpg",
   },
@@ -24,13 +24,13 @@ const menuItems = [
   },
   {
     name: "Latte",
-    description: "Cafe suave com leite vaporizado e arte.",
+    description: "Café suave com leite vaporizado e arte.",
     price: "R$ 14,00",
     image: "/images/latte.jpg",
   },
   {
     name: "Mocha",
-    description: "Cafe com chocolate belga e chantilly.",
+    description: "Café com chocolate belga e chantilly.",
     price: "R$ 15,00",
     image: "/images/mocha.jpg",
   },

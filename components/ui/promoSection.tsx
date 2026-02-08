@@ -52,7 +52,7 @@ export function PromoSection() {
                     : "opacity-0 translate-y-6"
                 }`}
               >
-                Na compra de dois cafes especiais, o terceiro e por nossa conta.
+                Na compra de dois cafés especiais, o terceiro e por nossa conta.
                 Valido de segunda a sexta, das 14h as 17h. Traga um amigo e
                 aproveite!
               </p>

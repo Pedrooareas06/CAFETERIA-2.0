@@ -6,8 +6,8 @@ import { MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react";
 const contactInfo = [
   {
     icon: MapPin,
-    label: "Endereco",
-    value: "Rua do Cafe Gostoso, 123 - Centro, Sao Paulo - SP",
+    label: "Endereço",
+    value: "Rua do Café Gostoso, 123 - Centro, Sao Paulo - SP",
   },
   {
     icon: Phone,
@@ -21,7 +21,7 @@ const contactInfo = [
   },
   {
     icon: Clock,
-    label: "Horario",
+    label: "Horário",
     value: "Seg-Sex: 7h-20h | Sab-Dom: 8h-18h",
   },
 ];
@@ -101,7 +101,7 @@ export function ContactSection() {
                 Fale pelo WhatsApp
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                Pedidos, reservas e duvidas. Resposta rapida!
+                Pedidos, reservas e dúvidas. Resposta rápida!
               </p>
               <a
                 href="https://wa.me/5511967125432?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Caf%C3%A9%20Aroma"
