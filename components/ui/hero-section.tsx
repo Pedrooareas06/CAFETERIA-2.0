@@ -58,7 +58,7 @@ export function HeroSection() {
         >
           <span className="h-2 w-2 rounded-full bg-primary animate-pulse-glow" />
           <span className="text-xs font-medium tracking-wider text-muted-foreground uppercase">
-            Desde 2014 -- Cafe Artesanal Premium
+            Desde 2014 , café artesanal
           </span>
         </div>
 
