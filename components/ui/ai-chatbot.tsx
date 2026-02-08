@@ -2,30 +2,109 @@
 
 import React from "react";
 import { useState, useRef, useEffect } from "react";
-import { useChat } from "@ai-sdk/react";
-import { DefaultChatTransport } from "ai";
 import { Bot, X, Send, Coffee, Sparkles } from "lucide-react";
+
+interface Message {
+  id: string;
+  role: "user" | "assistant";
+  content: string;
+}
 
 export function AIChatbot() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
-
-  const { messages, sendMessage, status } = useChat({
-    transport: new DefaultChatTransport({ api: "/api/chat" }),
-  });
-
-  const isLoading = status === "streaming" || status === "submitted";
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  useEffect(() => {
+    const handleScroll = () => {
+      const footer = document.getElementById("footer");
+      if (footer) {
+        const footerRect = footer.getBoundingClientRect();
+        // Esconder quando o footer ficar visível
+        setIsVisible(footerRect.top > window.innerHeight + 100);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!input.trim() || isLoading) return;
-    sendMessage({ text: input });
+
+    const userMessage: Message = {
+      id: Date.now().toString(),
+      role: "user",
+      content: input,
+    };
+
+    setMessages((prev) => [...prev, userMessage]);
     setInput("");
+    setIsLoading(true);
+
+    try {
+      const response = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          messages: [
+            ...messages,
+            { role: "user", content: input },
+          ],
+        }),
+      });
+
+      if (!response.ok) throw new Error("Erro ao enviar mensagem");
+
+      let fullContent = "";
+      const reader = response.body?.getReader();
+      const decoder = new TextDecoder();
+
+      if (reader) {
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+
+          const text = decoder.decode(value);
+          const lines = text.split("\n");
+
+          for (const line of lines) {
+            if (line.startsWith("0:")) {
+              const jsonStr = line.slice(2);
+              try {
+                const data = JSON.parse(jsonStr);
+                if (data.type === "text-delta" && data.textDelta) {
+                  fullContent += data.textDelta;
+                }
+              } catch (e) {
+                // Ignorar erros de parse
+              }
+            }
+          }
+        }
+      }
+
+      if (fullContent) {
+        const assistantMessage: Message = {
+          id: (Date.now() + 1).toString(),
+          role: "assistant",
+          content: fullContent,
+        };
+        setMessages((prev) => [...prev, assistantMessage]);
+      }
+    } catch (error) {
+      console.error("Erro:", error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const quickMessages = [
@@ -37,22 +116,24 @@ export function AIChatbot() {
   return (
     <>
       {/* Chat Button */}
-      <button
-        type="button"
-        onClick={() => setIsOpen(!isOpen)}
-        className={`fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full shadow-xl transition-all duration-500 ${
-          isOpen
-            ? "bg-secondary text-foreground rotate-90"
-            : "bg-primary text-primary-foreground hover:scale-110 hover:shadow-primary/30 animate-pulse-glow"
-        }`}
-        aria-label={isOpen ? "Fechar assistente" : "Abrir assistente IA"}
-      >
-        {isOpen ? (
-          <X className="h-5 w-5" />
-        ) : (
-          <Sparkles className="h-5 w-5" />
-        )}
-      </button>
+      {isVisible && (
+        <button
+          type="button"
+          onClick={() => setIsOpen(!isOpen)}
+          className={`fixed bottom-6 right-6 z-50 flex h-10 w-10 items-center justify-center rounded-full shadow-lg transition-all duration-500 ${
+            isOpen
+              ? "bg-secondary text-foreground rotate-90"
+              : "bg-primary text-primary-foreground hover:scale-110 hover:shadow-primary/30 animate-pulse-glow"
+          }`}
+          aria-label={isOpen ? "Fechar assistente" : "Abrir assistente IA"}
+        >
+          {isOpen ? (
+            <X className="h-4 w-4" />
+          ) : (
+            <Sparkles className="h-4 w-4" />
+          )}
+        </button>
+      )}
 
       {/* Chat Window */}
       <div
@@ -95,7 +176,11 @@ export function AIChatbot() {
                     key={msg}
                     type="button"
                     onClick={() => {
-                      sendMessage({ text: msg });
+                      setInput(msg);
+                      setTimeout(() => {
+                        const form = document.querySelector("form");
+                        if (form) form.dispatchEvent(new Event("submit", { bubbles: true }));
+                      }, 0);
                     }}
                     className="rounded-full border border-border bg-secondary/50 px-4 py-2 text-xs text-muted-foreground transition-all duration-200 hover:border-primary/50 hover:text-foreground hover:bg-primary/5"
                   >
@@ -120,16 +205,11 @@ export function AIChatbot() {
                         : "rounded-bl-sm bg-secondary text-secondary-foreground"
                     }`}
                   >
-                    {message.parts.map((part, index) => {
-                      if (part.type === "text") {
-                        return <span key={index}>{part.text}</span>;
-                      }
-                      return null;
-                    })}
+                    {message.content}
                   </div>
                 </div>
               ))}
-              {isLoading && messages[messages.length - 1]?.role === "user" && (
+              {isLoading && (
                 <div className="flex justify-start">
                   <div className="flex gap-1 rounded-2xl rounded-bl-sm bg-secondary px-4 py-3">
                     <span className="h-2 w-2 animate-bounce rounded-full bg-muted-foreground [animation-delay:0ms]" />
