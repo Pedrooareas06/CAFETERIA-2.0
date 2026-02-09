@@ -34,10 +34,10 @@ export function Footer() {
           </div>
 
           <div className="flex items-center gap-6">
-            {["Inicio", "Sobre", "Cardapio", "Contato"].map((label) => (
+            {["Início", "Sobre", "Cardápio", "Contato"].map((label) => (
               <a
                 key={label}
-                href={`#${label === "Inicio" ? "hero" : label === "Cardapio" ? "menu" : label.toLowerCase()}`}
+                href={`#${label === "Início" ? "hero" : label === "Cardápio" ? "menu" : label.toLowerCase()}`}
                 className="text-sm text-muted-foreground transition-colors duration-300 hover:text-foreground"
               >
                 {label}

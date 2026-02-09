@@ -30,7 +30,7 @@ export function PromoSection() {
               >
                 <Gift className="h-3.5 w-3.5 text-primary-foreground" />
                 <span className="text-xs font-semibold uppercase tracking-wider text-primary-foreground">
-                  Promocao Especial
+                  Promoção Especial
                 </span>
               </div>
 
@@ -52,8 +52,8 @@ export function PromoSection() {
                     : "opacity-0 translate-y-6"
                 }`}
               >
-                Na compra de dois cafés especiais, o terceiro e por nossa conta.
-                Valido de segunda a sexta, das 14h as 17h. Traga um amigo e
+                Na compra de dois cafés especiais, o terceiro é por nossa conta.
+                Válido de segunda a sexta, das 14h às 17h. Traga um amigo e
                 aproveite!
               </p>
               <a

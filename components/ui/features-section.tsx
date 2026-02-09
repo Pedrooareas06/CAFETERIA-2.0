@@ -3,14 +3,15 @@
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import Image from "next/image";
 import { Star, Flame, Snowflake } from "lucide-react";
+import { memo } from "react";
 
 const highlights = [
   {
     tag: "Mais Vendido",
     icon: Star,
-    name: "Cappuccino Classico",
+    name: "Cappuccino Clássico",
     description:
-      "Espuma cremosa e aveludada sobre um espresso encorpado. A combinação perfeita que conquistou o coração dos nossos clientes. Feito com leite fresco e grãos 100% arabica.",
+      "Espuma cremosa e aveludada sobre um espresso encorpado. A combinação perfeita que conquistou o coração dos nossos clientes. Feito com leite fresco e grãos 100% arábica.",
     price: "R$ 12,00",
     image: "/images/cappuccino.jpg",
     cta: "Eu quero!",
@@ -20,7 +21,7 @@ const highlights = [
     icon: Flame,
     name: "Mocha Premium",
     description:
-      "Chocolate belga artesanal encontra nosso espresso especial. Coberto com chantilly fresco e raspas de chocolate. Uma sobremesa em forma de cafe.",
+      "Chocolate belga artesanal encontra nosso espresso especial. Coberto com chantilly fresco e raspas de chocolate. Uma sobremesa em forma de café.",
     price: "R$ 15,00",
     image: "/images/mocha.jpg",
     cta: "Experimentar",
@@ -30,7 +31,7 @@ const highlights = [
     icon: Snowflake,
     name: "Cold Brew 12h",
     description:
-      "Extraído a frio por 12 horas para um sabor suave e naturalmente doce. Sem amargor, sem acidez. O café perfeito para os dias quentes de Sao Paulo.",
+      "Extraído a frio por 12 horas para um sabor suave e naturalmente doce. Sem amargor, sem acidez. O café perfeito para os dias quentes de São Paulo.",
     price: "R$ 13,00",
     image: "/images/cold-brew.jpg",
     cta: "Quero provar",
@@ -186,3 +187,5 @@ function HighlightItem({
     </div>
   );
 }
+
+export default memo(HighlightItem);

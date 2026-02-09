@@ -4,10 +4,10 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import Image from "next/image";
 
 const stats = [
-  { value: "10+", label: "Anos de experiencia" },
-  { value: "50k+", label: "Xicaras servidas" },
-  { value: "100%", label: "Graos selecionados" },
-  { value: "4.9", label: "Avaliacao Google" },
+  { value: "5+", label: "Anos de jornada" },
+  { value: "15k+", label: "Clientes felizes" },
+  { value: "50+", label: "Fazendas parceiras" },
+  { value: "4.9", label: "★ Comunidade ama" },
 ];
 
 export function AboutSection() {
@@ -30,7 +30,7 @@ export function AboutSection() {
             <div className="aspect-[4/5] relative">
               <Image
                 src="/images/about-cafe.jpg"
-                alt="Interior do Cafe Aroma"
+                alt="Interior do Café Raízes - Onde começou tudo"
                 fill
                 className="object-cover transition-transform duration-[1.5s] hover:scale-105"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -40,10 +40,10 @@ export function AboutSection() {
             {/* Floating badge */}
             <div className="absolute bottom-6 left-6 rounded-2xl bg-card/90 px-6 py-4 backdrop-blur-lg shadow-lg">
               <p className="font-serif text-3xl font-bold text-primary">
-                2014
+                2019
               </p>
               <p className="text-xs font-medium uppercase tracking-widest text-muted-foreground">
-                Fundado com paixao
+                Do zero ao sucesso
               </p>
             </div>
           </div>
@@ -57,7 +57,7 @@ export function AboutSection() {
                   : "opacity-0 translate-y-6"
               }`}
             >
-              Nossa Historia
+              Nossa Jornada
             </p>
             <h2
               className={`font-serif text-4xl font-bold leading-tight text-foreground md:text-5xl transition-all duration-700 delay-100 ${
@@ -67,7 +67,7 @@ export function AboutSection() {
               }`}
             >
               <span className="text-balance">
-                Paixao pelo cafe, do gão a xícara.
+                Começou numa garagem. Virou movimento.
               </span>
             </h2>
             <p
@@ -77,10 +77,9 @@ export function AboutSection() {
                   : "opacity-0 translate-y-6"
               }`}
             >
-              Ha mais de 10 anos, o Café Aroma traz a melhor experiência em café
-              artesanal. Selecionamos grãos especiais de produtores locais e
-              preparamos cada xícara com dedicação. Nosso compromisso e com a
-              qualidade, sustentabilidade e a arte de fazer café.
+              Tudo começou em 2019 numa garagem em São Paulo. Dois amigos loucos por café resolveram fazer seu próprio espresso em vez de pagar caro na cafeteria. Sem capital, sem experiência formal, apenas paixão e um sonho. <br/><br/>
+              Os primeiros clientes foram amigos, depois amigos dos amigos. Fazíamos café manualmente, aprendíamos lendo livros, cometíamos erros.  Mas cada coisa que saia de nossas mãos tinha autenticidade. As pessoas sentiam isso.<br/><br/>
+              Hoje somos a Café Raízes. Crescemos boca a boca. Conectamos com 50+ fazendas de produtores genuínos. Servimos 15 mil clientes que viram café não como commodity, mas como história. Cada grão tem uma origem. Cada xícara vale a pena. E tudo começou com dois caras, uma garagem e um sonho louco.
             </p>
 
             {/* Stats */}

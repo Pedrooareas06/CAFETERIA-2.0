@@ -9,7 +9,7 @@ export interface CartItem {
   quantity: number;
 }
 
-const CART_KEY = "cafe-aroma-cart";
+const CART_KEY = "cafe-raizes-cart";
 
 function getCart(): CartItem[] {
   if (typeof window === "undefined") return [];

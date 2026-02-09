@@ -10,8 +10,8 @@ const items = [
   "Mocha",
   "Affogato",
   "Macchiato",
-  "Cafe Gelado",
-  "Graos Especiais",
+  "Café Gelado",
+  "Grãos Especiais",
 ];
 
 export function MarqueeBanner() {

@@ -2,24 +2,25 @@
 
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { Star } from "lucide-react";
+import { memo } from "react";
 
 const testimonials = [
   {
     name: "Ana Carolina",
     role: "Cliente desde 2018",
-    text: "O melhor cappuccino que ja provei em Sao Paulo. O ambiente e acolhedor e os baristas sao incriveis. Meu cantinho favorito!",
+    text: "O melhor cappuccino que já provei em São Paulo. O ambiente é acolhedor e os baristas são incríveis. Meu cantinho favorito!",
     stars: 5,
   },
   {
     name: "Rafael Santos",
-    role: "Amante de cafe",
+    role: "Amante de café",
     text: "O cold brew de 12 horas mudou minha vida. Suave, sem amargor e naturalmente doce. Venho todos os dias antes do trabalho.",
     stars: 5,
   },
   {
     name: "Juliana Oliveira",
     role: "Food Blogger",
-    text: "O Cafe Aroma e uma experiencia sensorial completa. O affogato e divino e o atendimento pelo WhatsApp e super rapido!",
+    text: "Café Raízes transformou meu jeito de beber café. A história por trás de cada grão é fascinante. Affogato perfeito e equipe apaixonada!",
     stars: 5,
   },
 ];
@@ -39,7 +40,7 @@ export function TestimonialsSection() {
                 : "opacity-0 translate-y-6"
             }`}
           >
-            O que dizem sobre nos
+            O que dizem sobre nós
           </p>
           <h2
             className={`font-serif text-4xl font-bold text-foreground md:text-6xl transition-all duration-700 delay-100 ${
@@ -67,7 +68,7 @@ export function TestimonialsSection() {
   );
 }
 
-function TestimonialCard({
+function TestimonialCardComponent({
   testimonial,
   index,
 }: {
@@ -109,3 +110,5 @@ function TestimonialCard({
     </div>
   );
 }
+
+const TestimonialCard = memo(TestimonialCardComponent);

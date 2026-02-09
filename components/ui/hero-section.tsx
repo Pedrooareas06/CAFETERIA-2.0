@@ -31,7 +31,7 @@ export function HeroSection() {
       >
         <Image
           src="/images/hero-coffee.jpg"
-          alt="Cafe artesanal premium"
+          alt="Café artesanal premium"
           fill
           className="object-cover"
           priority
@@ -58,7 +58,7 @@ export function HeroSection() {
         >
           <span className="h-2 w-2 rounded-full bg-primary animate-pulse-glow" />
           <span className="text-xs font-medium tracking-wider text-muted-foreground uppercase">
-            Desde 2014 , café artesanal
+            Desde 2014, café artesanal
           </span>
         </div>
 
@@ -80,8 +80,8 @@ export function HeroSection() {
               : "opacity-0 translate-y-10"
           }`}
         >
-          Graos selecionados, torra artesanal e baristas apaixonados.
-          Cada xicara conta uma historia de sabor, aroma e dedicacao.
+          Grãos selecionados, torração artesanal e baristas apaixonados.
+          Cada xícara conta uma história de sabor, aroma e dedicação.
         </p>
 
         <div
@@ -95,7 +95,7 @@ export function HeroSection() {
             href="#menu"
             className="group relative overflow-hidden rounded-full bg-primary px-10 py-4 text-sm font-semibold uppercase tracking-widest text-primary-foreground shadow-lg shadow-primary/20 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/30 hover:brightness-110"
           >
-            <span className="relative z-10">Ver Cardapio</span>
+            <span className="relative z-10">Ver Cardápio</span>
             <span className="absolute inset-0 -z-0 translate-y-full bg-foreground transition-transform duration-500 group-hover:translate-y-0" />
           </a>
           <a

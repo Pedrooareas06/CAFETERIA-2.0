@@ -2,11 +2,12 @@
 
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import Image from "next/image";
+import { memo } from "react";
 
 const menuItems = [
   {
     name: "Espresso",
-    description: "Puro, intenso e encorpado. A essencia do café.",
+    description: "Puro, intenso e encorpado. A essência do café.",
     price: "R$ 8,00",
     image: "/images/espresso.jpg",
   },
@@ -17,7 +18,7 @@ const menuItems = [
     image: "/images/cappuccino.jpg",
   },
   {
-    name: "Cafe Gelado",
+    name: "Café Gelado",
     description: "Refrescante e saboroso para dias quentes.",
     price: "R$ 10,00",
     image: "/images/iced-coffee.jpg",
@@ -57,7 +58,7 @@ export function MenuSection() {
                 : "opacity-0 translate-y-6"
             }`}
           >
-            Cardapio Completo
+            Cardápio Completo
           </p>
           <h2
             className={`font-serif text-4xl font-bold text-foreground md:text-6xl transition-all duration-700 delay-100 ${
@@ -152,3 +153,5 @@ function MenuCard({
     </div>
   );
 }
+
+export default memo(MenuCard);

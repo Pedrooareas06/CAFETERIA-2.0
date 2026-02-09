@@ -6,6 +6,7 @@ import { AboutSection } from "@/components/ui/about-section";
 import { FeaturesSection } from "@/components/ui/features-section";
 import { MenuSection } from "@/components/ui/menu-section";
 import { TestimonialsSection } from "@/components/ui/testimonials";
+import { OrderingSection } from "@/components/ui/ordering-section";
 import { ContactSection } from "@/components/ui/contactSection";
 import { Footer } from "@/components/ui/Footer";
 import { AIChatbot } from "@/components/ui/ai-chatbot";
@@ -22,6 +23,7 @@ export default function Page() {
       <FeaturesSection />
       <MenuSection />
       <TestimonialsSection />
+      <OrderingSection />
       <ContactSection />
       <Footer />
       <AIChatbot />

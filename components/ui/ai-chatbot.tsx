@@ -110,7 +110,7 @@ export function AIChatbot() {
   const quickMessages = [
     "Qual o cardapio?",
     "Horario de funcionamento?",
-    "Me recomende um cafe",
+    "Me recomende um café",
   ];
 
   return (
@@ -153,7 +153,7 @@ export function AIChatbot() {
               Barista Virtual
             </p>
             <p className="text-xs text-muted-foreground">
-              Assistente IA do Cafe Aroma
+              Assistente IA do Café Raízes
             </p>
           </div>
           <div className="ml-auto flex h-2 w-2 rounded-full bg-[#25D366]" />
@@ -228,18 +228,23 @@ export function AIChatbot() {
           onSubmit={handleSubmit}
           className="flex items-center gap-2 border-t border-border/60 bg-secondary/30 px-4 py-3"
         >
+          <label htmlFor="chatbot-input" className="sr-only">
+            Digite sua mensagem para o assistente
+          </label>
           <input
+            id="chatbot-input"
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Digite sua mensagem..."
             disabled={isLoading}
-            className="flex-1 bg-transparent text-sm text-foreground placeholder:text-muted-foreground focus:outline-none disabled:opacity-50"
+            className="flex-1 bg-transparent text-sm text-foreground placeholder:text-muted-foreground focus:outline-none disabled:opacity-50 focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md"
+            aria-label="Mensagem para o assistente"
           />
           <button
             type="submit"
             disabled={!input.trim() || isLoading}
-            className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground transition-all duration-200 hover:scale-105 disabled:opacity-30"
+            className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground transition-all duration-200 hover:scale-105 disabled:opacity-30 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
             aria-label="Enviar mensagem"
           >
             <Send className="h-3.5 w-3.5" />

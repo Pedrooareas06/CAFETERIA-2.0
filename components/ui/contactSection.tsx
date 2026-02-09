@@ -7,7 +7,7 @@ const contactInfo = [
   {
     icon: MapPin,
     label: "Endereço",
-    value: "Rua do Café Gostoso, 123 - Centro, Sao Paulo - SP",
+    value: "Rua do Café Gostoso, 123 - Centro, São Paulo - SP",
   },
   {
     icon: Phone,
@@ -133,7 +133,7 @@ export function ContactSection() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Localizacao Cafe Aroma - Centro de Sao Paulo"
+              title="Localização Café Raízes - Centro de São Paulo"
               className="h-full w-full"
             />
           </div>
